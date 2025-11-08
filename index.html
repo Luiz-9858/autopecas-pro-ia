@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoPeças Pro - Peças para Carros e Caminhões</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>🚗 AutoPeças Pro</h1>
+      <p class="subtitle">Peças de qualidade para carros e caminhões | Atendimento com IA</p>
+    </header>
+
+    <div class="main-grid">
+      <div class="card">
+        <h2>📦 Catálogo de Peças</h2>
+
+        <div class="search-box">
+          <select id="vehicleType" name="vehicleType" aria-label="Selecione o tipo de veículo">
+            <option value="">Tipo de Veículo</option>
+            <option value="carro">Carro</option>
+            <option value="caminhao">Caminhão</option>
+          </select>
+          <select id="category" name="category" aria-label="Selecione a categoria da peça">
+            <option value="">Categoria</option>
+            <option value="motor">Motor</option>
+            <option value="freios">Freios</option>
+            <option value="suspensao">Suspensão</option>
+            <option value="eletrica">Elétrica</option>
+          </select>
+          <button type="button" onclick="filterProducts()">Buscar</button>
+        </div>
+
+        <div id="productsContainer" class="products-grid"></div>
+      </div>
+
+      <div class="card">
+        <h2>🤖 Assistente Virtual</h2>
+        <div class="chat-container">
+          <div id="chatMessages" class="chat-messages">
+            <div class="message ai">
+              Olá! Sou seu assistente virtual. Como posso ajudá-lo a encontrar a peça perfeita para seu veículo? 🚗
+            </div>
+          </div>
+          <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Digite sua pergunta...">
+            <button id="sendBtn" onclick="sendMessage()">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📋 Solicitar Orçamento</h2>
+      <form id="quoteForm" onsubmit="submitQuote(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefone:</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="vehicle">Veículo (Marca/Modelo/Ano):</label>
+            <input type="text" id="vehicle" name="vehicle" placeholder="Ex: Toyota Hilux 2020" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="parts">Peças Necessárias:</label>
+          <textarea id="parts" name="parts" rows="3" placeholder="Descreva as peças que você precisa..."
+            required></textarea>
+        </div>
+        <button type="submit">Enviar Solicitação</button>
+        <div id="successMessage" class="success-message">
+          ✅ Orçamento enviado com sucesso! Entraremos em contato em breve.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
