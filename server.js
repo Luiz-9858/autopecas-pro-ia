@@ -63,3 +63,5 @@ app.listen(PORT, () => {
   console.log("📦 Acesse: http://localhost:" + PORT + "/index.html");
   console.log("🔑 Groq API configurada!");
 });
+
+// Final commit para limpar cache Vercel
