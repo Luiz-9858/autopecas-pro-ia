@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const Groq = require("groq-sdk");
 const app = express();
+const path = require("path"); // Módulo nativo do Node.js para manipulação de caminhos de arquivos
 
 // Middleware
 app.use(cors());
@@ -19,6 +20,9 @@ if (!apiKey) {
 const groq = new Groq({ apiKey });
 
 // Rota para o chat da IA
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 app.post("/api/chat", async (req, res) => {
   try {
     const { message, products } = req.body;
