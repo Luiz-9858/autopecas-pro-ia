@@ -8,7 +8,8 @@ const path = require("path"); // Módulo nativo do Node.js para manipulação de
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(".")); // Serve arquivos estáticos (HTML, CSS, JS)
+app.use(express.static("."));
+app.use(express.static(path.join(__dirname, "/"))); // Serve arquivos estáticos (HTML, CSS, JS)
 
 // IMPORTANTE: Coloque sua chave API da Groq aqui
 const apiKey = process.env.GROQ_API_KEY;
