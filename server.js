@@ -2,27 +2,32 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const Groq = require("groq-sdk");
+const path = require("path");
+
 const app = express();
-const path = require("path"); // Módulo nativo do Node.js para manipulação de caminhos de arquivos
 
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "/"))); // Serve arquivos estáticos (HTML, CSS, JS)
+
+// 🔥 CRÍTICO: Serve arquivos estáticos da raiz
+app.use(express.static(__dirname));
 
 // IMPORTANTE: Coloque sua chave API da Groq aqui
 const apiKey = process.env.GROQ_API_KEY;
 if (!apiKey) {
   console.error("Missing GROQ_API_KEY environment variable.");
-  process.exit(1); // stop the server early so you don't run without a key
+  process.exit(1);
 }
 
 const groq = new Groq({ apiKey });
 
-// Rota para o chat da IA
+// 🔥 Rota para servir o index.html na raiz
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
+
+// Rota para o chat da IA
 app.post("/api/chat", async (req, res) => {
   try {
     const { message, products } = req.body;
@@ -61,11 +66,9 @@ Responda de forma amigável, técnica e útil em português. Se o cliente pergun
   }
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("🚀 Servidor rodando em http://localhost:" + PORT);
   console.log("📦 Acesse: http://localhost:" + PORT + "/index.html");
   console.log("🔑 Groq API configurada!");
 });
-
-// Final commit para limpar cache Vercel
