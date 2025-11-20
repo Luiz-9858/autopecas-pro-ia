@@ -1,3 +1,21 @@
+import { supabase } from "./src/supabaseClient.js";
+
+// Testar conexão com Supabase
+async function testarSupabase() {
+  console.log("🔍 Testando conexão com Supabase...");
+
+  const { data, error } = await supabase.from("products").select("*");
+
+  if (error) {
+    console.error("❌ Erro ao buscar produtos:", error);
+  } else {
+    console.log("✅ Produtos do Supabase:", data);
+  }
+}
+
+// Chamar a função quando a página carregar
+testarSupabase();
+
 const database = {
   products: [
     {
