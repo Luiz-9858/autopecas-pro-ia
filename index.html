@@ -352,8 +352,21 @@
       return data;
     }
 
-    // Testar busca do Supabase
-    buscarProdutosSupabase();
+    // Variável global para armazenar produtos
+    let produtosGlobais = [];
+
+    // Carregar produtos do Supabase ao iniciar
+    async function inicializarApp() {
+      produtosGlobais = await buscarProdutosSupabase();
+      if (!produtosGlobais) {
+        console.error('Erro ao carregar produtos. Usando dados locais como fallback.');
+        produtosGlobais = database.products;
+      }
+      filterProducts(); // Atualiza a exibição
+    }
+
+    // Inicializar quando a página carregar
+    inicializarApp();
 
 
     const database = {
@@ -399,7 +412,7 @@
       const vehicleType = document.getElementById('vehicleType').value;
       const category = document.getElementById('category').value;
 
-      let filtered = database.products;
+      let filtered = produtosGlobais;
 
       if (vehicleType) {
         filtered = filtered.filter(p => p.type === vehicleType);
@@ -446,7 +459,7 @@
           },
           body: JSON.stringify({
             message: userMessage,
-            products: database.products.map(p => ({
+            products: produtosGlobais.map(p => ({
               name: p.name,
               price: p.price,
               type: p.type
