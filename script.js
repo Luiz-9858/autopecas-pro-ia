@@ -1,3 +1,4 @@
+//ESTOU USANDO SUPABASE NO ARQUIVO HTML, ENTÃO IMPORTAÇÃO NÃO É MAIS NECESSÁRIA AQUI
 import { supabase } from "./src/supabaseClient.js";
 
 // Testar conexão com Supabase
