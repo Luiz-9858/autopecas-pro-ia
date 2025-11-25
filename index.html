@@ -133,6 +133,26 @@
       transition: transform 0.3s;
     }
 
+    /* Estilos para imagens dos produtos */
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      margin: -15px -15px 15px -15px;
+      display: block;
+    }
+
+    .product-card {
+      overflow: hidden;
+    }
+
+    /* Efeito hover na imagem */
+    .product-card:hover .product-image {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+
     .product-card:hover {
       transform: scale(1.05);
     }
@@ -462,16 +482,22 @@
       }
 
       container.innerHTML = products
-        .map(product => `
-                    <div class="product-card">
-                        <h3>${product.name}</h3>
-                        <div class="price">R$ ${product.price.toFixed(2)}</div>
-                        <div class="stock">Em estoque: ${product.stock}</div>
-                        <button onclick="addToQuote('${product.name}')" style="margin-top:10px; padding:8px 15px; font-size:0.9em;">
-                            Solicitar
-                        </button>
-                    </div>
-                `).join('');
+        .map((product) => `
+    <div class="product-card">
+      <img 
+  src="${product.image_url || 'https://placehold.co/400x300/e5e7eb/1f2937?text=Sem+Imagem'}" 
+  alt="${product.name}" 
+  class="product-image"
+  onerror="this.onerror=null; this.src='https://placehold.co/400x300/ef4444/ffffff?text=Erro+ao+Carregar'"
+/>
+      <h3>${product.name}</h3>
+      <div class="price">R$ ${product.price.toFixed(2)}</div>
+      <div class="stock">Em estoque: ${product.stock}</div>
+      <button onclick="addToQuote('${product.name}')" style="margin-top:10px; padding:8px 15px; font-size:0.9em;">
+        Solicitar
+      </button>
+    </div>
+  `).join('');
     }
 
     function filterProducts() {
