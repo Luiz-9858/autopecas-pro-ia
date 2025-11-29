@@ -323,6 +323,29 @@
       animation: pulse 2s infinite;
     }
 
+    /* Botão Carregar Mais */
+    .load-more-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .load-more-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .load-more-btn:active {
+      transform: translateY(0);
+    }
+
     /* Responsivo */
     @media (max-width: 768px) {
       .whatsapp-float {
@@ -429,34 +452,52 @@
       'sb_publishable_5v3DKdSFy-5sc2P2cIco0w_JXhqMNHh'
     );
 
-    // Função para buscar produtos do Supabase
-    async function buscarProdutosSupabase() {
-      const { data, error } = await supabaseClient.from('products').select('*');
-
-      if (error) {
-        console.error('Erro ao buscar produtos do Supabase:', error);
-        return null;
-      }
-
-      console.log('✅ Produtos carregados do Supabase:', data);
-      return data;
-    }
-
     // Variável global para armazenar produtos
     let produtosGlobais = [];
+    let produtosMostrados = 12;
+    const produtosPorPagina = 12;
+
+    // Função para buscar produtos do Supabase
+    async function buscarProdutosSupabase() {
+      console.log('🔍 INICIANDO busca no Supabase...'); // Debug
+
+      try {
+        const { data, error } = await supabaseClient.from('products').select('*');
+
+        if (error) {
+          console.error('❌ ERRO ao buscar produtos do Supabase:', error);
+          return null;
+        }
+
+        console.log('✅ Produtos carregados do Supabase:', data);
+        console.log('📊 Total de produtos:', data.length);
+        return data;
+
+      } catch (err) {
+        console.error('❌ EXCEÇÃO ao buscar produtos:', err);
+        return null;
+      }
+    }
+
+
 
     // Carregar produtos do Supabase ao iniciar
     async function inicializarApp() {
+      console.log('🚀 INICIALIZANDO APP...'); // Debug
+
       produtosGlobais = await buscarProdutosSupabase();
+
+      console.log('📦 produtosGlobais após busca:', produtosGlobais); // Debug
+
       if (!produtosGlobais) {
-        console.error('Erro ao carregar produtos. Usando dados locais como fallback.');
+        console.error('⚠️ Erro ao carregar produtos. Usando dados locais como fallback.');
         produtosGlobais = database.products;
       }
+
+      console.log('✅ Total de produtos carregados:', produtosGlobais.length); // Debug
+
       filterProducts(); // Atualiza a exibição
     }
-
-    // Inicializar quando a página carregar
-    inicializarApp();
 
 
     const database = {
@@ -485,26 +526,49 @@
         return;
       }
 
-      container.innerHTML = products
+      // Mostra apenas os primeiros X produtos
+      const produtosParaMostrar = products.slice(0, produtosMostrados);
+
+      container.innerHTML = produtosParaMostrar
         .map((product) => `
-    <div class="product-card">
-      <img 
-  src="${product.image_url || 'https://placehold.co/400x300/e5e7eb/1f2937?text=Sem+Imagem'}" 
-  alt="${product.name}" 
-  class="product-image"
-  onerror="this.onerror=null; this.src='https://placehold.co/400x300/ef4444/ffffff?text=Erro+ao+Carregar'"
-/>
-      <h3>${product.name}</h3>
-      <div class="price">R$ ${product.price.toFixed(2)}</div>
-      <div class="stock">Em estoque: ${product.stock}</div>
-      <button onclick="addToQuote('${product.name}')" style="margin-top:10px; padding:8px 15px; font-size:0.9em;">
-        Solicitar
-      </button>
-    </div>
-  `).join('');
+      <div class="product-card">
+        <img 
+          src="${product.image_url || 'https://placehold.co/400x300/e5e7eb/1f2937?text=Sem+Imagem'}" 
+          alt="${product.name}" 
+          class="product-image"
+          onerror="this.onerror=null; this.src='https://placehold.co/400x300/ef4444/ffffff?text=Erro+ao+Carregar'"
+        />
+        <h3>${product.name}</h3>
+        <div class="price">R$ ${product.price.toFixed(2)}</div>
+        <div class="stock">Em estoque: ${product.stock}</div>
+        <button onclick="addToQuote('${product.name}')" style="margin-top:10px; padding:8px 15px; font-size:0.9em;">
+          Solicitar
+        </button>
+      </div>
+    `).join('');
+
+      // Adiciona botão "Carregar Mais" se tiver mais produtos
+      if (produtosMostrados < products.length) {
+        container.innerHTML += `
+      <div style="grid-column: 1 / -1; text-align: center; margin-top: 20px;">
+        <button id="loadMoreBtn" class="load-more-btn">
+          Carregar mais produtos (${products.length - produtosMostrados} restantes)
+        </button>
+      </div>
+    `;
+        // Adiciona evento de clique
+        document.getElementById('loadMoreBtn').addEventListener('click', carregarMaisProdutos);
+      }
+    }
+
+    // Função para carregar mais produtos
+    function carregarMaisProdutos() {
+      produtosMostrados += produtosPorPagina; // Aumenta em 12
+      filterProducts(); // Atualiza a exibição
     }
 
     function filterProducts() {
+      produtosMostrados = produtosPorPagina; // Reseta ao filtrar
       const vehicleType = document.getElementById('vehicleType').value;
       const category = document.getElementById('category').value;
 
@@ -517,9 +581,9 @@
       if (category) {
         filtered = filtered.filter(p => p.category === category);
       }
-
       displayProducts(filtered);
     }
+
 
     function addToQuote(productName) {
       const partsField = document.getElementById('parts');
@@ -624,7 +688,7 @@
       console.log('Orçamentos salvos:', database.quotes);
     }
 
-    displayProducts(database.products);
+    inicializarApp();
   </script>
 
   <!-- Botão WhatsApp Flutuante -->
