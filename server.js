@@ -3,7 +3,6 @@ const express = require("express");
 const cors = require("cors");
 const Groq = require("groq-sdk");
 const path = require("path");
-
 const app = express();
 
 // Middleware
@@ -38,9 +37,11 @@ app.post("/api/chat", async (req, res) => {
       messages: [
         {
           role: "user",
-          content: `Você é um assistente de uma loja de peças automotivas. O cliente perguntou: "${message}". 
-                    
-Temos as seguintes peças em estoque: ${JSON.stringify(products)}
+          content: `Você é assistente de autopeças. Seja BREVE (máx 3 linhas).
+
+Pergunta: "${message}"
+
+Estoque: ${JSON.stringify(products)}
 
 Responda de forma amigável, técnica e útil em português. Se o cliente perguntar sobre uma peça específica, sugira opções do nosso estoque.`,
         },
