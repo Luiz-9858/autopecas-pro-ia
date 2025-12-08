@@ -1,101 +1,182 @@
-# 🚗 AutoPeças Pro - Sistema com IA
+<div align="center">
 
-![Status](https://img.shields.io/badge/status-online-success)
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+# 🚗 AutoPeças Pro
 
-Sistema completo de peças automotivas com assistente virtual integrado usando Inteligência Artificial.
+### Catálogo de Peças Automotivas com IA
 
-## 🌐 Demo Online
+[![Deploy](https://img.shields.io/badge/deploy-vercel-black)](https://autopecas-pro-ia.vercel.app/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/status-MVP-success)](https://github.com/Luiz-9858/autopecas-pro-ia)
 
-**🔗 [https://autopecas-pro-ia.vercel.app](https://autopecas-pro-ia.vercel.app)**
+**Peças de qualidade para carros e caminhões | Atendimento inteligente com IA**
+
+[🔗 Ver Demo](https://autopecas-pro-ia.vercel.app/) • [📦 Repositório](https://github.com/seu-usuario/seu-repo)
+
+</div>
+
+---
+
+## 📋 Sobre o Projeto
+
+O **AutoPeças Pro** é um catálogo digital moderno de peças automotivas desenvolvido como MVP (Minimum Viable Product) para facilitar a busca e solicitação de peças para carros e caminhões.
+
+O projeto integra tecnologias modernas como **Supabase** para gerenciamento de dados e **Groq AI** para atendimento inteligente via chat, proporcionando uma experiência completa para o usuário.
+
+### 🎯 Objetivo
+
+Criar uma plataforma intuitiva onde clientes possam:
+
+- Buscar peças por tipo de veículo e categoria
+- Consultar disponibilidade e preços em tempo real
+- Obter recomendações através de IA
+- Entrar em contato diretamente via WhatsApp
 
 ---
 
 ## ✨ Funcionalidades
 
-- 📦 **Catálogo de Peças** - Navegação intuitiva com filtros por tipo de veículo e categoria
-- 🤖 **Chat com IA** - Assistente virtual inteligente usando Groq API (Llama 3.3)
-- 📋 **Formulário de Orçamento** - Solicitação de orçamentos em tempo real
-- 🔍 **Filtros Avançados** - Busca por Carro/Caminhão e categorias (Motor, Freios, Suspensão, Elétrica)
-- 💬 **Respostas em Português** - IA treinada para atender em português brasileiro
-- 📱 **Design Responsivo** - Funciona perfeitamente em desktop, tablet e mobile
-- ⚡ **Deploy Automático** - Integração contínua com Vercel
+### 🔍 Catálogo Inteligente
+
+- **Busca por nome:** Encontre peças digitando o nome
+- **Filtros avançados:** Por tipo de veículo (carro/caminhão) e categoria
+- **Paginação:** Sistema "Carregar Mais" para melhor performance
+- **Imagens:** Visualização de cada produto
+
+### 🤖 Assistente Virtual com IA
+
+- Chat integrado com Groq AI (Llama 3.3 70B)
+- Respostas curtas e objetivas
+- Recomendações personalizadas baseadas no estoque
+- Contexto completo do catálogo
+
+### 📱 Contato Direto
+
+- Botão WhatsApp flutuante com animação
+- Mensagem pré-configurada
+- Link direto para conversa
+
+### 🎨 Interface Moderna
+
+- Design responsivo (mobile-first)
+- Cards visuais com imagens
+- Informações claras (preço, estoque)
+- Ícone personalizado (favicon)
 
 ---
 
-## 🛠️ Tecnologias
+## 🖼️ Screenshots
+
+### Tela Principal
+
+![Catálogo](https://i.imgur.com/Jxom7ei.jpeg)
+
+### Busca e Filtros
+
+![Filtros](https://i.imgur.com/MFEFrzy.jpeg)
+
+### Chat com IA
+
+![Chat](https://i.imgur.com/P58QirF.jpeg)
+
+### Mobile
+
+![Mobile](https://i.imgur.com/eldjUZ3.jpeg)
+
+---
+
+## 🛠️ Tecnologias Utilizadas
 
 ### Frontend
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+- **HTML5** - Estrutura semântica
+- **CSS3** - Estilização moderna e responsiva
+- **JavaScript (ES6+)** - Lógica e interatividade
 
-### Backend
+### Backend & Serviços
 
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+- **Node.js** - Servidor backend
+- **Express.js** - Framework web
+- **Supabase** - Banco de dados PostgreSQL (BaaS)
+- **Groq API** - Inteligência Artificial (Llama 3.3 70B)
 
-### IA e APIs
+### Deployment & Ferramentas
 
-![Groq](https://img.shields.io/badge/Groq_API-FF6B6B?style=for-the-badge)
-![Llama](https://img.shields.io/badge/Llama_3.3-8B5CF6?style=for-the-badge)
+- **Vercel** - Deploy e hospedagem
+- **Git/GitHub** - Controle de versão
+- **VS Code** - Ambiente de desenvolvimento
 
-### Deploy e Ferramentas
+### Bibliotecas
 
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![Git](https://img.shields.io/badge/Git-E34F26?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+- **Font Awesome** - Ícones
+- **Supabase JS Client** - SDK do Supabase
 
 ---
 
-## 🚀 Como Rodar Localmente
+## 📦 Como Rodar o Projeto Localmente
 
 ### Pré-requisitos
 
-- Node.js v20.x ou superior
-- npm ou yarn
-- Conta na Groq (para chave API gratuita)
+- Node.js 18+ instalado
+- Conta no Supabase (gratuita)
+- Conta no Groq (gratuita)
 
 ### Instalação
 
-1. **Clone o repositório:**
+1. **Clone o repositório**
 
 ```bash
-git clone https://github.com/Luiz-9858/autopecas-pro-ia.git
-cd autopecas-pro-ia
+git clone https://github.com/Luiz-9858/autopecas-pro.git
+cd autopecas-pro
 ```
 
-2. **Instale as dependências:**
+2. **Instale as dependências**
 
 ```bash
 npm install
 ```
 
-3. **Configure as variáveis de ambiente:**
+3. **Configure as variáveis de ambiente**
 
 Crie um arquivo `.env` na raiz do projeto:
 
 ```env
-GROQ_API_KEY=sua_chave_da_groq_aqui
+# Supabase
+VITE_SUPABASE_URL=sua_url_aqui
+VITE_SUPABASE_ANON_KEY=sua_chave_aqui
+
+# Groq API
+GROQ_API_KEY=sua_chave_groq_aqui
 ```
 
-> 🔑 **Como obter a chave da Groq:**
->
-> 1. Acesse: [https://console.groq.com/](https://console.groq.com/)
-> 2. Faça login ou crie uma conta gratuita
-> 3. Vá em "API Keys"
-> 4. Crie uma nova chave
-> 5. Copie e cole no arquivo `.env`
+4. **Configure o banco de dados**
 
-4. **Inicie o servidor:**
+No Supabase, crie a tabela `products`:
+
+```sql
+CREATE TABLE products (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  category TEXT NOT NULL,
+  type TEXT NOT NULL,
+  price NUMERIC NOT NULL,
+  stock INTEGER NOT NULL,
+  description TEXT,
+  image_url TEXT
+);
+
+-- Adicionar política de leitura pública
+CREATE POLICY "Enable read access for all users"
+ON products FOR SELECT
+USING (true);
+```
+
+5. **Rode o projeto**
 
 ```bash
-npm start
+npm run dev
 ```
 
-5. **Acesse no navegador:**
+6. **Acesse no navegador**
 
 ```
 http://localhost:3000
@@ -103,197 +184,115 @@ http://localhost:3000
 
 ---
 
-## 🌐 Deploy na Vercel
+## 🚧 Desafios e Soluções
 
-### Opção 1: Deploy Automático (Recomendado)
+Durante o desenvolvimento, enfrentei alguns desafios técnicos interessantes:
 
-1. Faça fork deste repositório
-2. Acesse [vercel.com](https://vercel.com)
-3. Clique em "New Project"
-4. Importe o repositório `autopecas-pro-ia`
-5. Configure a variável de ambiente:
-   - **Key:** `GROQ_API_KEY`
-   - **Value:** sua chave da Groq
-6. Clique em "Deploy"
+### 1. **Integração com Supabase**
 
-### Opção 2: Vercel CLI
+**Desafio:** Configurar Row Level Security (RLS) e policies para acesso público aos produtos.
 
-```bash
-npm install -g vercel
-vercel login
-vercel
-```
+**Solução:** Criei uma policy permissiva para operações SELECT, permitindo leitura pública enquanto mantém segurança para operações de escrita.
 
-Durante o deploy, configure:
+### 2. **Gerenciamento de Estado**
 
-- **GROQ_API_KEY:** sua chave da Groq
+**Desafio:** Sincronizar dados do banco com filtros e paginação sem recarregar a página.
 
----
+**Solução:** Implementei variáveis globais (`produtosGlobais`, `produtosMostrados`) e funções reativas que atualizam a UI instantaneamente.
 
-## 📂 Estrutura do Projeto
+### 3. **Respostas da IA muito longas**
 
-```
-autopecas-pro-ia/
-├── api/
-│   └── chat.js              # Serverless Function (API da IA)
-├── node_modules/            # Dependências (ignorado no git)
-├── .env                     # Variáveis de ambiente (ignorado no git)
-├── .gitignore               # Arquivos ignorados pelo Git
-├── index.html               # Frontend (HTML + CSS + JS inline)
-├── package.json             # Dependências e scripts npm
-├── package-lock.json        # Lock de versões
-├── README.md                # Este arquivo
-├── script.js                # JavaScript (referência/backup)
-├── server.js                # Servidor Node.js local
-├── style.css                # CSS (referência/backup)
-└── vercel.json              # Configuração da Vercel
-```
+**Desafio:** O chat retornava respostas extensas que prejudicavam a UX.
+
+**Solução:** Refinei o prompt da IA com instruções explícitas de brevidade (máx 3 linhas) e uso de bullet points.
+
+### 4. **Performance com muitos produtos**
+
+**Desafio:** Renderizar todos os produtos de uma vez sobrecarregava a página.
+
+**Solução:** Implementei paginação "Carregar Mais" com `slice()`, mostrando 12 produtos por vez.
+
+### 5. **Imagens com URLs quebradas**
+
+**Desafio:** Algumas URLs de imagens falhavam, mostrando cards vazios.
+
+**Solução:** Adicionei `onerror` handler com imagem de fallback e validação de URLs no Supabase.
 
 ---
 
-## 🔐 Segurança
+## 🎓 Aprendizados
 
-- ✅ Chaves API armazenadas em variáveis de ambiente
-- ✅ Arquivo `.env` no `.gitignore` (nunca commitado)
-- ✅ CORS configurado corretamente
-- ✅ Validação de entrada no backend
-- ✅ Rate limiting da Groq API
-- ✅ Proteção contra injeção de código
+Este projeto me proporcionou experiência prática em:
 
----
-
-## 💾 Banco de Dados (Em Memória)
-
-Atualmente, o sistema usa dados mockados em memória com:
-
-- 12 produtos (6 para carros, 6 para caminhões)
-- Categorias: Motor, Freios, Suspensão, Elétrica
-- Orçamentos salvos na sessão do navegador
-
-### Produtos Disponíveis:
-
-- **Carros:** Pastilha de Freio, Disco de Freio, Amortecedor, Bateria 60Ah, Alternador, Filtro de Óleo, Vela de Ignição
-- **Caminhões:** Pastilha de Freio, Disco de Freio, Bateria 150Ah, Filtro de Ar, Amortecedor de Cabine
+- ✅ **Integração com APIs REST** (Supabase, Groq)
+- ✅ **Manipulação de DOM** e eventos JavaScript
+- ✅ **Gerenciamento de estado** em vanilla JS
+- ✅ **Trabalho com banco de dados** (PostgreSQL via Supabase)
+- ✅ **Prompt engineering** para IA
+- ✅ **Deploy contínuo** com Vercel
+- ✅ **Versionamento** com Git/GitHub
+- ✅ **Debugging** e resolução de problemas
 
 ---
 
-## 🎨 Personalização
+## 🚀 Melhorias Futuras
 
-### Trocar Cores
+### Curto Prazo
 
-Edite o gradiente no `index.html`:
+- [ ] Adicionar fotos reais das peças
+- [ ] Sistema de ordenação (preço, nome, estoque)
+- [ ] Modo escuro/claro
+- [ ] Loader animado ao carregar produtos
 
-```css
-body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-```
+### Médio Prazo
 
-### Adicionar Produtos
+- [ ] Painel administrativo para gerenciar produtos
+- [ ] Sistema de carrinho de compras
+- [ ] Integração com WhatsApp Business API
+- [ ] Formulário de orçamento com email
+- [ ] Sistema de avaliações
 
-Edite o array `database.products` no script:
+### Longo Prazo (Versão PRO)
 
-```javascript
-const database = {
-  products: [
-    {
-      id: 13,
-      name: "Novo Produto",
-      category: "motor",
-      type: "carro",
-      price: 199.9,
-      stock: 10,
-    },
-  ],
-};
-```
-
-### Customizar IA
-
-Edite o prompt em `api/chat.js`:
-
-```javascript
-content: `Você é um assistente especializado em peças automotivas...`;
-```
+- [ ] Sistema de autenticação
+- [ ] Área do cliente
+- [ ] Histórico de pedidos
+- [ ] Integração com gateway de pagamento
+- [ ] Sistema de entregas
+- [ ] App mobile (PWA)
 
 ---
 
-## 🚧 Roadmap - Próximas Melhorias
+## 👤 Autor
 
-### Fase 1 - Infraestrutura
+**Luiz Fernando**
 
-- [ ] Integração com PostgreSQL para persistência de dados
-- [ ] Sistema de envio de emails real (SendGrid/Mailgun)
-- [ ] Logs estruturados e monitoramento
-
-### Fase 2 - Funcionalidades
-
-- [ ] Sistema de autenticação (login/registro)
-- [ ] Dashboard administrativo
-- [ ] CRUD completo de produtos
-- [ ] Gerenciamento de orçamentos
-- [ ] Substituir emojis por Font Awesome
-
-### Fase 3 - E-commerce (Opcional)
-
-- [ ] Carrinho de compras
-- [ ] Sistema de pagamentos (Stripe/Mercado Pago)
-- [ ] Rastreamento de pedidos
-- [ ] Avaliações de produtos
+- GitHub: [@Luiz-9858](https://github.com/Luiz-9858)
+- LinkedIn: [luiz-fernand0-silva](www.linkedin.com/in/luiz-fernand0-silva)
+- Email: luizfernandodev16@gmail.com
+- Portfolio: [luiz-silva-portfolio.netlify.app](https://luiz-silva-portfolio.netlify.app/)
 
 ---
 
-## 🐛 Problemas Conhecidos
-
-Nenhum problema conhecido no momento. Se encontrar algum bug, abra uma [issue](https://github.com/Luiz-9858/autopecas-pro-ia/issues).
-
----
-
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Para contribuir:
-
-1. Faça fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/NovaFuncionalidade`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Push para a branch (`git push origin feature/NovaFuncionalidade`)
-5. Abra um Pull Request
-
----
-
-## 📝 Licença
+## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
-## 👨‍💻 Autor
-
-**Luiz Fernando da Silva**
-
-- GitHub: [@Luiz-9858](https://github.com/Luiz-9858)
-- Email: susananarcisio@gmail.com
-
----
-
 ## 🙏 Agradecimentos
 
-- [Groq](https://groq.com/) - API de IA gratuita e rápida
-- [Vercel](https://vercel.com/) - Plataforma de deploy
-- [Anthropic](https://anthropic.com/) - Assistência no desenvolvimento com Claude
+- [Supabase](https://supabase.com/) - Backend as a Service
+- [Groq](https://groq.com/) - Infraestrutura de IA
+- [Vercel](https://vercel.com/) - Hospedagem e deploy
+- [Font Awesome](https://fontawesome.com/) - Ícones
 
 ---
 
-## 📊 Status do Projeto
+<div align="center">
 
-```
-✅ MVP Completo e Funcional
-✅ Deploy em Produção
-🚧 Melhorias em Planejamento
-```
+**⭐ Se este projeto te ajudou, deixe uma estrela!**
 
----
+Made with ❤️ and ☕
 
-**⭐ Se este projeto te ajudou, deixe uma estrela no GitHub!**
-
-**🔗 [Ver Projeto Online](https://autopecas-pro-ia.vercel.app)**
+</div>
