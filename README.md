@@ -268,7 +268,7 @@ Este projeto me proporcionou experiência prática em:
 **Luiz Fernando**
 
 - GitHub: [@Luiz-9858](https://github.com/Luiz-9858)
-- LinkedIn: [luiz-fernand0-silva](www.linkedin.com/in/luiz-fernand0-silva)
+- LinkedIn: [luiz-fernand0-silva](www.linkedin.com/in/luiz-fernando-fullstack)
 - Email: luizfernandodev16@gmail.com
 - Portfolio: [luiz-silva-portfolio.netlify.app](https://luiz-silva-portfolio.netlify.app/)
 
